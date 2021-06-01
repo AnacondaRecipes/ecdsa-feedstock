@@ -18,20 +18,24 @@ requirements:
   host:
     - pip
     - python
+    - wheel
+    - setuptools
   run:
     - python
-    - six
+    - six >=1.9.0
 
 test:
   imports:
     - ecdsa
 
 about:
-  home: http://github.com/warner/python-ecdsa
+  home: https://github.com/tlsfuzzer/python-ecdsa
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: ECDSA cryptographic signature library (pure python)
+  dev_url: https://github.com/tlsfuzzer/python-ecdsai
+  doc_url: https://pypi.org/project/ecdsa
 
 extra:
   recipe-maintainers:
