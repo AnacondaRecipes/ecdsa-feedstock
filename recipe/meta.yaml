@@ -1,5 +1,5 @@
 {% set name = "ecdsa" %}
-{% set version = "0.17.0" %}
+{% set version = "0.19.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b9f500bb439e4153d0330610f5d26baaf18d17b8ced1bc54410d189385ea68aa
+  sha256: 60eaad1199659900dd0af521ed462b793bbdf867432b3948e87416ae4caf6bf8
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
@@ -27,6 +27,10 @@ requirements:
 test:
   imports:
     - ecdsa
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/tlsfuzzer/python-ecdsa
@@ -34,7 +38,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: ECDSA cryptographic signature library (pure python)
-  dev_url: https://github.com/tlsfuzzer/python-ecdsai
+  dev_url: https://github.com/tlsfuzzer/python-ecdsa
   doc_url: https://pypi.org/project/ecdsa
 
 extra:
