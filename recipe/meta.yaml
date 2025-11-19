@@ -39,6 +39,12 @@ about:
   summary: ECDSA cryptographic signature library (pure python)
   dev_url: https://github.com/tlsfuzzer/python-ecdsa
   doc_url: https://pypi.org/project/ecdsa
+  description: |
+    This is an easy-to-use implementation of ECC (Elliptic Curve Cryptography)
+    with support for ECDSA (Elliptic Curve Digital Signature Algorithm),
+    EdDSA (Edwards-curve Digital Signature Algorithm)
+    and ECDH (Elliptic Curve Diffie-Hellman),
+    implemented purely in Python
 
 extra:
   recipe-maintainers:
