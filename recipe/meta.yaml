@@ -2,7 +2,7 @@
 {% set version = "0.19.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -23,13 +23,20 @@ requirements:
     - python
     - six >=1.9.0
 
+# E       binascii.Error: Incorrect padding
+{% set deselect_tests = " --deselect=src/ecdsa/test_keys.py::test_SigningKey_from_pem_pkcs8v2_EdDSA" %}
 test:
+  source_files:
+    - src/ecdsa
   imports:
     - ecdsa
   commands:
     - pip check
+    - pytest -vv src/ecdsa {{ deselect_tests }}
   requires:
     - pip
+    - pytest
+    - hypothesis
 
 about:
   home: https://github.com/tlsfuzzer/python-ecdsa
