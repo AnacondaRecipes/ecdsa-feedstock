@@ -53,15 +53,6 @@ about:
     and ECDH (Elliptic Curve Diffie-Hellman),
     implemented purely in Python
 
-
-
-
-
-
-
-
-
-
 extra:
   recipe-maintainers:
     - mariusvniekerk
